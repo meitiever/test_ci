@@ -14,8 +14,8 @@ catkin_package(
    
 )
 
-find_package(Eigen3 3.3.4 REQUIRED)
-find_package(PCL 1.8.1 QUIET)
+find_package(Eigen3 REQUIRED)
+find_package(PCL QUIET)
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 find_package(Boost COMPONENTS system)
