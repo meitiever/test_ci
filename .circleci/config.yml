@@ -5,4 +5,4 @@ jobs:
       - image: ros:kinetic-robot-xenial
     steps:
       - checkout
-      - run: catkin_make
+      - run: source /opt/ros/kinetic/setup.bash && catkin_make
