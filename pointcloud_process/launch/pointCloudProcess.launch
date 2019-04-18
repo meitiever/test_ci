@@ -1,0 +1,8 @@
+<launch>
+    <node name="PointCloudProcess" pkg="point_cloud_process" type="point_cloud_process" output="screen"/>
+    <param name="topicPointCloud" value="/mynteye/points/data_raw" type="str"/>
+    <param name="topicPose" value="/vins_estimator/camera_pose" type="str"/>
+    <param name="topicDepth" value="/mynteye/depth/image_raw" type="str"/>
+    <param name="topicColor" value="/mynteye/left/image_color" type="str"/>
+    <param name="parameterPath" value="/home/wsh/vins_ws/src/pointcloud_process/config/config.yaml" type="str"/>
+</launch>
