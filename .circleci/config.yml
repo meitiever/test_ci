@@ -23,4 +23,4 @@ jobs:
         command: source /opt/ros/kinetic/setup.bash && catkin_make
     branches:
         ignore:
-          - HMY
+          - master
