@@ -5,5 +5,5 @@ jobs:
       - image: ros:kinetic-robot-xenial
     steps:
       - checkout
-      - run: apt-get install ros-kinetic-cv-bridge
+      - run: apt-get update && apt-get install ros-kinetic-cv-bridge
       - run: source /opt/ros/kinetic/setup.bash && catkin_make
