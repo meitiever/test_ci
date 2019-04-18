@@ -6,8 +6,6 @@ commands:
       to:
         type: string
         default: "Hello World"
-    steps:
-      - run: echo << parameters.to >>
 jobs:
   build:
     docker:
@@ -15,3 +13,4 @@ jobs:
     steps:
       - checkout
       - run: pwd
+      - run: echo << parameters.to >>
