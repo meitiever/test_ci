@@ -1,6 +1,6 @@
 pwdversion: 2
 jobs:
-  sienva_test_name:
+  build:
     docker:
       - image: ros:kinetic-robot-xenial
     steps:
