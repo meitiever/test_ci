@@ -1,9 +1,9 @@
-version: 2
+pwdversion: 2
 jobs:
   build:
     docker:
       - image: ros:kinetic-robot-xenial
     steps:
       - checkout
-      - run: apt-get update && apt-get install ros-kinetic-cv-bridge
+      - run: pwd
       - run: source /opt/ros/kinetic/setup.bash && catkin_make
