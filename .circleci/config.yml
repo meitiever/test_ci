@@ -1,4 +1,4 @@
-pwdversion: 2
+version: 2
 commands:
   sayhello:
     description: "A very simple command for demonstration purposes"
