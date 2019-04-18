@@ -1,4 +1,13 @@
 pwdversion: 2
+commands:
+  sayhello:
+    description: "A very simple command for demonstration purposes"
+    parameters:
+      to:
+        type: string
+        default: "Hello World"
+    steps:
+      - run: echo << parameters.to >>
 jobs:
   build:
     docker:
@@ -6,5 +15,3 @@ jobs:
     steps:
       - checkout
       - run: pwd
-      - run: apt-get update && apt-get install -y ros-kinetic-desktop-full
-      - run: source /opt/ros/kinetic/setup.bash && catkin_make
