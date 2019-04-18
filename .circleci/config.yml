@@ -6,12 +6,11 @@ jobs:
       - image: ros:kinetic-robot-xenial
     steps:
       - checkout
-      - run:
-        name: ROS INSTALL
-        command: apt-get update && apt-get install -y ros-kinetic-core-base
-      - run:
+      - run: apt-get update && apt-get install -y ros-kinetic-core-base
+        name: UPDATE
+      - run: source /opt/ros/kinetic/setup.bash && catkin_make
         name: CATKIN MAKE
-        command: source /opt/ros/kinetic/setup.bash && catkin_make
+   
     branches:
         ignore:
           - master
