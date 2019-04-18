@@ -15,4 +15,5 @@ jobs:
       - image: ros:kinetic-robot-xenial
     steps:
       - checkout
-      - run: sayhello
+      - sayhello:
+          to: "ABCDEFG"
