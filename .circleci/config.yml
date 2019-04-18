@@ -7,9 +7,7 @@ jobs:
     steps:
       - checkout
       - run: apt-get update && apt-get install -y ros-kinetic-core-base
-        name: UPDATE
       - run: source /opt/ros/kinetic/setup.bash && catkin_make
-        name: CATKIN MAKE
    
     branches:
         ignore:
