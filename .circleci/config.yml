@@ -6,7 +6,7 @@ jobs:
       - image: ros:kinetic-robot-xenial
     steps:
       - checkout
-      - run: apt-get update && apt-get install -y ros-kinetic-ros-base
+      - run: apt-get update && apt-get install -y ros-kinetic-desktop-full
       - run: source /opt/ros/kinetic/setup.bash && catkin_make
    
     branches:
