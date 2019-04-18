@@ -6,11 +6,13 @@ commands:
       to:
         type: string
         default: "Hello World"
+      steps:
+        - run: echo << parameters.to >>
+
 jobs:
   build:
     docker:
       - image: ros:kinetic-robot-xenial
     steps:
       - checkout
-      - run: pwd
-      - run: echo << parameters.to >>
+      - run: syhello
