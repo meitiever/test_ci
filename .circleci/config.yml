@@ -24,7 +24,7 @@ jobs:
 #          name: "Publish Release on GitHub"
 #          command: |
 #            VERSION=$(test_ci --version)
-            ls && ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ./artifacts/
+            cd artifacts && ls && ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ./artifacts/
 
 workflows:
   version: 2
