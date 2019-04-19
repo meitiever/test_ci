@@ -18,14 +18,11 @@ jobs:
     docker:
       - image: cibuilds/github:0.10
     steps:
-      - attach_workspace:
-          at: ./artifacts
       - run:
 #          name: "Publish Release on GitHub"
 #          command: |
 #            VERSION=$(test_ci --version)
-            cd artifacts && ls 
-#&& ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ./artifacts/
+             ghr v0.1.0 src/ -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ./artifacts/
 
 workflows:
   version: 2
