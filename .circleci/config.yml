@@ -4,39 +4,10 @@ jobs:
   build:
     docker:
       - image: ros:kinetic-robot-xenial
+      - image: cibuilds/github:0.10
     steps:
       - checkout
 #      - run: apt-get update && apt-get install -y ros-kinetic-desktop-full
 #      - run: source /opt/ros/kinetic/setup.bash && catkin_make
       - run: echo "hello world" # run the `echo` command
-
-#    branches:
-#        ignore:
-#          - master
-
-  publish-github-release:
-    docker:
-      - image: cibuilds/github:0.10
-    steps:
-      - run:
-#          name: "Publish Release on GitHub"
-#          command: |
-#            VERSION=$(test_ci --version)
-             pwd && cd test_ci && ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} v0.0.0
-
-workflows:
-  version: 2
-  main:
-    jobs:
-      - build
-#          filters:
-#           tags:
-#              only: /^\d+\.\d+\.\d+$/
-      - publish-github-release
-#          requires:
-#            - build
-#          filters:
-#            branches:
-#              ignore: /.*/
-#            tags:
-#              only: /^\d+\.\d+\.\d+$/
+      - run: pwd && ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} v0.0.0
