@@ -6,4 +6,4 @@ jobs:
     steps:
       - checkout
 #      - run: apt-get update && apt-get install -y ros-kinetic-desktop-full
-      - run: source /opt/ros/kinetic/setup.bash && cd test_ci && catkin_make
+      - run: source /opt/ros/kinetic/setup.bash && catkin_make
