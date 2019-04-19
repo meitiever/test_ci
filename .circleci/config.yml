@@ -1,4 +1,4 @@
-version: 2
+ version: 2
 
 jobs:
   build:
@@ -19,11 +19,11 @@ jobs:
       - image: cibuilds/github:0.10
     steps:
       - checkout   
-      - run: echo ${CIRCLE_PROJECT_USERNAME}
+      - run: echo ${CIRCLE_SHA1}
       - run:
           name: "Publish Release on GitHub"
           command: |
-             VERSION=$(../test_ci v0.0.0)
+             VERSION=$(src v0.0.0)
              ls -l && ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION}
 
 workflows:
