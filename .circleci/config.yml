@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/src
     docker:
-      - image: ros:kinetic-desktop
+      - image: ros:kinetic-robot
     steps:
       - run: apt-get update && apt-get install -y ros-kinetic-desktop-full git
       - run: mkdir -p /home/steve/catkin_ws/src && cd /home/steve/catkin_ws/src
