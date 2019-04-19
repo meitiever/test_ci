@@ -4,6 +4,8 @@ jobs:
     docker:
       - image: ros:kinetic-robot-xenial
     steps:
-      - checkout
       - run: apt-get update && apt-get install -y ros-kinetic-desktop
+      - run: mkdir /home/steve/catkin_ws/src && cd /home/steve/catkin_ws/src
+      - checkout
+      - run: cd ..
       - run: source /opt/ros/kinetic/setup.bash && catkin_make
