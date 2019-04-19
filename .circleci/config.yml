@@ -19,7 +19,7 @@ jobs:
       - image: cibuilds/github:0.10
     steps:
       - attach_workspace:
-          at: ./artifacts
+          at: test_ci
       - checkout   
       - run: echo ${CIRCLE_PROJECT_USERNAME}
       - run:
