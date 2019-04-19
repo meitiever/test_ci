@@ -1,12 +1,12 @@
 version: 2
 jobs:
   build:
-    working_directory: /home/steve/catkin_ws/src
+    working_directory: ~/src
     docker:
-      - image: ros:kinetic-robot-xenial
+      - image: osrf/ros:kinetic-desktop-full
     steps:
-      - run: apt-get update && apt-get install -y ros-kinetic-desktop-full git
+      - run: apt-get update && apt-get install -y git
       - run: mkdir -p /home/steve/catkin_ws/src && cd /home/steve/catkin_ws/src
-      - checkout 
-      - run: ls -l /home/steve/catkin_ws/src
+      - checkout       
+      - run: cp -r ~/src/* /home/steve/catkin_ws/src
       - run: cd /home/steve/catkin_ws && source /opt/ros/kinetic/setup.bash && catkin_make
