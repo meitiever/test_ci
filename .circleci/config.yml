@@ -19,6 +19,8 @@ jobs:
       - image: cibuilds/github:0.10
     steps:
       - checkout
+      - run: echo ${GITHUB_TOKEN}      
+      - run: echo ${CIRCLE_PROJECT_USERNAME}
       - run:
 #          name: "Publish Release on GitHub"
 #          command: |
