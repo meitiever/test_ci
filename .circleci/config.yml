@@ -10,9 +10,9 @@ jobs:
 #      - run: source /opt/ros/kinetic/setup.bash && catkin_make
       - run: echo "hello world" # run the `echo` command
 
-    branches:
-        ignore:
-          - master
+#    branches:
+#        ignore:
+#          - master
 
   publish-github-release:
     docker:
