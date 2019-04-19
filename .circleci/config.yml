@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
 #      - run: apt-get update && apt-get install -y ros-kinetic-desktop-full
- #     - run: source /opt/ros/kinetic/setup.bash && catkin_make
+#      - run: source /opt/ros/kinetic/setup.bash && catkin_make
       - run: echo "hello world" # run the `echo` command
 
     branches:
@@ -30,11 +30,11 @@ workflows:
   version: 2
   main:
     jobs:
-      - build:
+      - build
 #          filters:
 #           tags:
 #              only: /^\d+\.\d+\.\d+$/
-      - publish-github-release:
+      - publish-github-release
 #          requires:
 #            - build
 #          filters:
