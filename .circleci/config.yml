@@ -23,7 +23,7 @@ jobs:
 #          name: "Publish Release on GitHub"
 #          command: |
 #             VERSION=$(src v0.0.0)
-             ls -l && ghr -t de1923fe1aefd9b69565812c8656de9d91383897 -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete v0.1.0 ../test_ci/
+             ls -l && cd .. && ls -l && ghr -t de1923fe1aefd9b69565812c8656de9d91383897 -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete v0.1.0 src/
 
 workflows:
   version: 2
