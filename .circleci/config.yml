@@ -8,5 +8,5 @@ jobs:
       - run: apt-get update && apt-get install -y git
       - run: mkdir -p /home/steve/catkin_ws/src && cd /home/steve/catkin_ws/src
       - checkout 
-      - run: cp -rf ~/src /home/steve/catkin_ws/src
+      - run: cp -rf ~/src/* /home/steve/catkin_ws/src
       - run: cd /home/steve/catkin_ws && source /opt/ros/kinetic/setup.bash && catkin_make
